@@ -48,6 +48,7 @@ data class Transaction(
 //Controls what the transaction holds, ex: date, amount, category
 // Defines the structure of a Transaction. Each field maps to a column in the TRANSACTION table in the database.
 ```
+
 ```kotlin
 //TransactionController
 package com.jackkamin.finex
@@ -74,6 +75,7 @@ class TransactionController(private val repository: TransactionRepository) {
     }
 }
 ```
+
 ```kotlin
 //Database repo
 
