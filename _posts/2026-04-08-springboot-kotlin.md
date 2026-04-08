@@ -9,9 +9,8 @@ I have implemented a Springboot backend using Kotlin. I ran into some problems w
 
 DISCLAIMER**
 majority of this setup was from claude, i just altered it and tried my best to ask the right questions.
-
+## MAIN APPLICATION
 ```kotlin
-// Main File
 package com.jackkamin.finex
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -26,9 +25,10 @@ fun main(args: Array<String>) {
 //This is the main kt file, this is what we build.
 }
 ```
-
+## TRANSACTION MODEL 
+Every time someone POSTs a transaction, it gets stored as one of these. It tells the database "a transaction has these fields: an ID, an amount, a description, a category, a type, and a date.
+@Entity lets us tell the database to create a table for it.
 ```kotlin
-//Transaction declaration
 package com.jackkamin.finex
 
 import jakarta.persistence.*
@@ -48,9 +48,9 @@ data class Transaction(
 //Controls what the transaction holds, ex: date, amount, category
 // Defines the structure of a Transaction. Each field maps to a column in the TRANSACTION table in the database.
 ```
-
+## TRANSACTION CONTROLLER
+The controller handles incoming HTTP requests. It gives us three endpoints — GET, POST and DELETE.
 ```kotlin
-//TransactionController
 package com.jackkamin.finex
 
 import org.springframework.web.bind.annotation.*
@@ -75,7 +75,8 @@ class TransactionController(private val repository: TransactionRepository) {
     }
 }
 ```
-
+## REPOSITORY
+Our connection to the database, handles SQL for us.
 ```kotlin
 //Database repo
 
