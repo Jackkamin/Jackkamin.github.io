@@ -8,7 +8,7 @@ I have begun a personal finance project, the idea is to have all my outgoings an
 I have implemented a Springboot backend using Kotlin. I ran into some problems with folder structure however with help from Claude
 
 DISCLAIMER**
-majority of this setup was from claude, i just altered it and tried my best to ask the right questions.
+I used Claude as a learning aid to understand concepts and debug issues
 ## MAIN APPLICATION
 ```kotlin
 package com.jackkamin.finex
